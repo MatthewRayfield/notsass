@@ -1,3 +1,4 @@
+1.3 - reuse style tag
 1.2 - notsass.com text
 1.1 - support for comments
 1.0 - functional

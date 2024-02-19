@@ -9,7 +9,7 @@
 |   | |  |/ |   :    |  |  | '.'| `----.   \ ," .--.; |   `----.   \ `----.   \
 |   | |--'   \   \  /   ;  :    ;/  /`--'  //  /  ,.  |  /  /`--'  //  /`--'  /
 |   |/        `----'    |  ,   /'--'.     /;  :   .'   \'--'.     /'--'.     /
-'---'                    ---`-'   `--'---' |  ,     .-./  `--'---'   `--'---' v1.2
+'---'                    ---`-'   `--'---' |  ,     .-./  `--'---'   `--'---' v1.3
                                             `--`---'*/
 
 // after using scss for a bit, i found myself trying to type nested css selectors
@@ -104,10 +104,7 @@ const styleTags = Array.from(document.querySelectorAll('style'));
 
 styleTags.forEach(e => {
     if (e.type == 'notsass') {
-        const code = e.innerHTML;
-        const outElement = document.createElement('style');
-        const compiled = compile(code);
-        outElement.innerHTML = compiled;
-        document.head.appendChild(outElement);
+        e.removeAttribute('type');
+        e.innerHTML = compile(e.innerHTML);
     }
 });
